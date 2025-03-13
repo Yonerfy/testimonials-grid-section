@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import 'tailwindcss';
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+/* colors  */
+.custon-black {
+  color: #121212;
+}
+.dark-blue {
+  color: #19202D;
+}
+.grey-100 {
+  color: #E7EAEE;
+}
+.grey-200 {
+  color: #CFCFCF;
+}
+.grey-400 {
+  color: #676D7E;
+}
+.grey-500 {
+  color: #48556A;
+}
+.purble-50 {
+  color: #EDE4FF
+}
+.purble-300 {
+  color: #A775F1
+}
+.purble-500 {
+  color: #733FC8
+}
+
+/* Typography */
+.text-preset-1 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 120%;
+  letter-spacing: 0;
+}
+.text-preset-2 {
+  font-size: 0.813rem;
+  font-weight: 500;
+  line-height: 110%;
+  letter-spacing: 0;
+}
+.text-preset-3 {
+  font-size: 0.813rem;
+  font-weight: 500;
+  line-height: 140%;
+  letter-spacing: 0;
+}
+.text-preset-4 {
+  font-size: 0.688rem;
+  font-weight: 500;
+  line-height: 110%;
+  letter-spacing: 0;
+}
+
+/* layout */
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  gap: 2rem;
+  grid-template-areas: 
+    "daniel daniel jonathan kira"
+    "daniel daniel jonathan kira"
+    "jeanette patrick patrick kira"
+    "jeanette patrick patrick kira"
+}
+
+.daniel {
+  grid-area: daniel;
+  background-image: url('./assets/bg-pattern-quotation.svg');
+  background-repeat: no-repeat;
+  background-position: 85% 0%;
+}
+.daniel p {
+  color: #EDE4FF;
+}
+.jonathan {
+  grid-area: jonathan;
+}
+.kira {
+  grid-area: kira;
+}
+.jeanette {
+  grid-area: jeanette;
+}
+.patrick {
+  grid-area: patrick;
+}
+
+.kira, .jeanette {
+  color: hsl(217, 19%, 35%);
+}
+.kira p, .jeanette p {
+  color: #676D7E;
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: 
+      "daniel daniel"
+      "jonathan jeanette"
+      "patrick patrick"
+      "kira kira"
+  }
+}
+
+@media (max-width: 460px) {
+  .container {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas: 
+      "daniel"
+      "jonathan"
+      "jeanette"
+      "patrick"
+      "kira"
+  }
+}
